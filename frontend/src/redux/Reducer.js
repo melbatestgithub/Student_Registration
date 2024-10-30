@@ -17,6 +17,8 @@ const studentReducer=(state=initialState,action)=>{
             }
             case UPDATE_STUDENT:
                 return {...state,students}
+                default:
+                    return state;
     }
 
 }
