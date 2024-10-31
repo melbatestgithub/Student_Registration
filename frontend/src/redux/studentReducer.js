@@ -1,4 +1,4 @@
-import { DISPLAY_STUDENTS,DELETE_STUDENT,UPDATE_STUDENT,ADD_STUDENT,SEARCH_STUDENT } from "./Action";
+import { DISPLAY_STUDENTS,DELETE_STUDENT,UPDATE_STUDENT,ADD_STUDENT,SEARCH_STUDENT, updateStudent } from "./Action";
 
 const initialState={
     students:[]
@@ -16,9 +16,10 @@ const studentReducer=(state=initialState,action)=>{
                 students:state.students.filter((st)=>st.id !==action.payload)
             }
             case UPDATE_STUDENT:
-                return {...state,students}
+                return {...state,updateStudent}
                 default:
                     return state;
     }
 
 }
+export default studentReducer

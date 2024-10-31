@@ -9,10 +9,10 @@ const RegisterStudents = () => {
     phoneNumber: '',
     department: '',
     course: [''],
-    grade: '',
     age: '',
   });
 
+  const [error,setError]=useState({})
   const handleChange = (e) => {
     const { name, value } = e.target;
     setStudentData({ ...studentData, [name]: value });
@@ -24,14 +24,13 @@ const RegisterStudents = () => {
     console.log('Student Data Submitted:', studentData);
     // Reset the form
     setStudentData({
-      fullName: '',
-      email: '',
-      phone: '',
-      dateOfBirth: '',
-      address: '',
-      grade: '',
-      parentName: '',
-      parentPhone: '',
+    firstName: '',
+    lastName:'',
+    email: '',
+    phoneNumber: '',
+    department: '',
+    course: [''],
+    age: '',
     });
   };
 
@@ -42,11 +41,22 @@ const RegisterStudents = () => {
       <h1 className='text-2xl font-bold text-cyan-600 mb-6'>Register Student</h1>
       <form onSubmit={handleSubmit}>
         <div className='mb-4'>
-          <label className='block mb-1 font-semibold'>Full Name</label>
+          <label className='block mb-1 font-semibold'>First Name</label>
           <input 
             type='text' 
             name='firstName' 
-            value={studentData.fullName} 
+            value={studentData.firstName} 
+            onChange={handleChange} 
+            required 
+            className='w-full p-2 border rounded'
+          />
+        </div>
+        <div className='mb-4'>
+          <label className='block mb-1 font-semibold'>Last Name</label>
+          <input 
+            type='text' 
+            name='lastName' 
+            value={studentData.lastName} 
             onChange={handleChange} 
             required 
             className='w-full p-2 border rounded'
@@ -67,29 +77,29 @@ const RegisterStudents = () => {
           <label className='block mb-1 font-semibold'>Phone Number</label>
           <input 
             type='tel' 
-            name='phone' 
-            value={studentData.phone} 
+            name='phoneNumber' 
+            value={studentData.phoneNumber} 
             onChange={handleChange} 
             required 
             className='w-full p-2 border rounded'
           />
         </div>
         <div className='mb-4'>
-          <label className='block mb-1 font-semibold'>Date of Birth</label>
+          <label className='block mb-1 font-semibold'>Age</label>
           <input 
-            type='date' 
-            name='dateOfBirth' 
-            value={studentData.dateOfBirth} 
+            type='number' 
+            name='age' 
+            value={studentData.age} 
             onChange={handleChange} 
             required 
             className='w-full p-2 border rounded'
           />
         </div>
         <div className='mb-4'>
-          <label className='block mb-1 font-semibold'>Address</label>
+          <label className='block mb-1 font-semibold'>Department</label>
           <textarea 
-            name='address' 
-            value={studentData.address} 
+            name='department' 
+            value={studentData.department} 
             onChange={handleChange} 
             required 
             className='w-full p-2 border rounded' 
@@ -97,50 +107,20 @@ const RegisterStudents = () => {
           />
         </div>
         <div className='mb-4'>
-          <label className='block mb-1 font-semibold'>Grade</label>
+          <label className='block mb-1 font-semibold'>Course</label>
           <select 
-            name='grade' 
-            value={studentData.grade} 
+            name='course' 
+            value={studentData.course} 
             onChange={handleChange} 
             required 
             className='w-full p-2 border rounded'
           >
-            <option value=''>Select Grade</option>
-            <option value='1'>1</option>
-            <option value='2'>2</option>
-            <option value='3'>3</option>
-            <option value='4'>4</option>
-            <option value='5'>5</option>
-            <option value='6'>6</option>
-            <option value='7'>7</option>
-            <option value='8'>8</option>
-            <option value='9'>9</option>
-            <option value='10'>10</option>
-            <option value='11'>11</option>
-            <option value='12'>12</option>
+            <option value=''>Select Course</option>
+            <option value='1'>JS</option>
+            <option value='2'>Python</option>
+            <option value='3'>HTML</option>
+            <option value='4'>Data Structure</option>
           </select>
-        </div>
-        <div className='mb-4'>
-          <label className='block mb-1 font-semibold'>Parent/Guardian Name</label>
-          <input 
-            type='text' 
-            name='parentName' 
-            value={studentData.parentName} 
-            onChange={handleChange} 
-            required 
-            className='w-full p-2 border rounded'
-          />
-        </div>
-        <div className='mb-4'>
-          <label className='block mb-1 font-semibold'>Parent/Guardian Phone Number</label>
-          <input 
-            type='tel' 
-            name='parentPhone' 
-            value={studentData.parentPhone} 
-            onChange={handleChange} 
-            required 
-            className='w-full p-2 border rounded'
-          />
         </div>
         <button 
           type='submit' 
