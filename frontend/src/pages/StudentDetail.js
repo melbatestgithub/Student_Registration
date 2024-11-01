@@ -73,7 +73,7 @@ const StudentDetail = () => {
         ...values,  
         course: selectedCourses,  
       };
-
+        
       console.log("Dispatching update action with:", editingStudent._id, updatedStudent);
       dispatch(updateStudentRequest(editingStudent._id, updatedStudent));
       toast.success("Student updated successfully!");
