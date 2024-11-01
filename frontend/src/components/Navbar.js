@@ -25,7 +25,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className='flex items-center'>
-          <Link to="/profile" className='flex items-center text-white hover:text-gray-200 transition duration-200 mr-4'>
+          <Link  className='flex items-center text-white hover:text-gray-200 transition duration-200 mr-4'>
             <img 
               src="https://i.pinimg.com/564x/03/eb/d6/03ebd625cc0b9d636256ecc44c0ea324.jpg" 
               alt="Profile"

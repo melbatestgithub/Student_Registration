@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 const Main = () => {
   return (
     <div >
@@ -24,7 +24,7 @@ const Main = () => {
         <div className='p-6 border rounded-lg shadow-lg hover:shadow-xl transition duration-300'>
           <h2 className='text-xl font-semibold text-cyan-600'>View Student Details</h2>
           <p className='text-gray-600 mt-2'>
-            Access detailed information about each student, including grades and attendance records.
+            Access detailed information about each student
           </p>
         </div>
         <div className='p-6 border rounded-lg shadow-lg hover:shadow-xl transition duration-300'>
@@ -41,13 +41,14 @@ const Main = () => {
         <p className='text-gray-600 mt-2'>
           Join us today and make student management easier and more effective.
         </p>
+        <Link to="/register">
         <button className='mt-4 bg-cyan-600 text-white px-6 py-2 rounded-lg hover:bg-cyan-500 transition duration-200'>
           Get Started
         </button>
+        </Link>
+       
       </div>
     </div>
-  
-    <Footer/>
     </div>
   );
 }

@@ -1,7 +1,4 @@
 import {BrowserRouter as Router ,Route,Routes} from 'react-router-dom'
-import Navbar from "./components/Navbar";
-import Main from  "./components/Main"
-import Footer from "./components/Footer"
 import RegisterStudents from './pages/RegisterStudents';
 import StudentDetail from './pages/StudentDetail';
 import HomePage from "./pages/Home"
