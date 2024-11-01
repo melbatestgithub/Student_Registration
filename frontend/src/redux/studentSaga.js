@@ -15,7 +15,7 @@ import {
 
 function* fetchStudentsSaga() {
     try {
-        const response = yield call(fetch, 'http://localhost:8000/students/getAllStudent'); 
+        const response = yield call(fetch, 'https://registrationbackend-3b6f.onrender.com/students/getAllStudent'); 
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -30,7 +30,7 @@ function* fetchStudentsSaga() {
 
 function* addStudentSaga(action) {
     try {
-        const response = yield call(fetch, 'http://localhost:8000/students/registerStudent', {
+        const response = yield call(fetch, 'https://registrationbackend-3b6f.onrender.com/students/registerStudent', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ function* deleteStudentSaga(action) {
     console.log("Delete Saga Triggered with ID:", action.payload);
     try {
         
-        const response = yield call(fetch, `http://localhost:8000/students/delete/${action.payload}`, { method: 'DELETE' });
+        const response = yield call(fetch, `https://registrationbackend-3b6f.onrender.com/students/delete/${action.payload}`, { method: 'DELETE' });
         if (!response.ok) {
             throw new Error('Failed to delete student');
         }
@@ -70,7 +70,7 @@ function* deleteStudentSaga(action) {
 function* updateStudentSaga(action) {
     console.log("Received action in saga:", action);
     try {
-        const response = yield call(fetch, `http://localhost:8000/students/update/${action.payload.id}`, {
+        const response = yield call(fetch, `https://registrationbackend-3b6f.onrender.com/students/update/${action.payload.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
